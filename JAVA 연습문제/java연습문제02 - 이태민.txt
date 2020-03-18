@@ -1,0 +1,75 @@
+1. java에서 코드작성부터 실행까지의 순서를 c언어와 비교하여 설명하시오.
+
+c언어는 객체 개념이 없고 코드 작성시 메모리에 사용할 함수들을 미리 넣어줄 필요가 없지만
+java는 class 내에서 묶어서 써야하며 사용할 함수를 밀이 인스턴트로 불러와야함.
+
+나중에 컴파일을 할때 c언어는 링커가 필요한 라이브러리들을 링크해서 실행파일을 자동으로 생성하지만
+자바는 jvm에서 실행가능한 바이트코드 형태의 클래스 파일이 생성되어서 jvm에서 실행을 할 수 있다.
+링커가 따로없이 컴파일러가 바이트코드를 생성해준다.
+
+c언어는 플랫폼에 따라 실행파일이 달라 플랫폼이 달라지면 새로 컴파일해야하지만 java는 jvm에서 실행되기때ㅜㅁㄴ에 플랫폼이 
+달라져도 다시 컴파일할 필요성이 없다.
+
+2. 바이트코드에 대해서 설명하시오.
+자바의 가상머신인 jvm에서 돌아가는 실행프로그램을 위한 이진 표현법이다.
+
+
+3. 가상머신에 대해서 설명하시오.
+물리적인 하드웨어를 가상화해서 하나의 하드웨어에 여러개의 컴퓨터가 구동되는 것 처럼 이용.
+여러가지 os를 사용해야할때나 독립적으로 사용해야하는것이있거나 여러사람이 한 컴퓨터를 이용할때 사용하는 것.
+
+4. class와 instance가 무엇인지 설명하시오.
+class는 객체를 만들기 위한 설계도 - 연관되있는 변수와 메서드의 집합
+instance는 class를 바탕으로 구현된 구체적인 실체. 
+
+
+5. main함수에서 static의 역할이 무엇인지 설명하시오.
+static은 메모리에 미리 준비되어 실행 가능하게 해주는 역할인데 만약에 main이 static을 사용하지 않으면
+자바가 코드를 실행했을때 시작점인 main을 호출해도 메모리에 main이 없어서 자바는 아무것도 실행하지못하고
+꺼지게됨. 그래서 반드시 static을 붙여야함.
+
+6. 이름, 학번, 학과를 키보드 입력을 받아서 출력하기.
+scanner사용
+import java.util.Scanner;
+
+public class exercise1{
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("이름, 학번, 학과를 순서대로 입력하세요.");
+		
+		String st_name = sc.next();
+		long st_id = sc.nextLong();
+		String st_major = sc.next();
+		
+		System.out.println(st_name+" 학생의 학번은 "+st_id+"이고 학과는 "+st_major+"입니다.");		
+	}
+	
+}
+
+
+7. 국어,영어,수학 세과목을 키보드 입력을 받아서 
+평균구하기. scanner사용
+
+import java.util.Scanner;
+
+public class exercise2{
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("국어 영어 수학 성적을 차례대로 입력하세요.");
+		
+		double korean = sc.nextDouble();
+		double english = sc.nextDouble();
+		double mathematics = sc.nextDouble();
+		
+		double average = (korean + english + mathematics) / 3;
+		
+		System.out.println("이번 학기 성적 평균은 "+ average + "입니다.");		
+	}
+	
+}
