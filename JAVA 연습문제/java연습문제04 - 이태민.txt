@@ -1,0 +1,73 @@
+1. Member클래스를 만드시오.
+멤버변수 : name, address, job, age
+멤버함수 : showInfo() - 전체 데이터 출력
+
+package exercise;
+
+public class Member {
+	
+	String name;
+	String address;
+	String job;
+	int age;
+	
+	public Member() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Member(String name, String address, String job, int age) {
+		this.address = address;
+		this.age = age;
+		this.job = job;
+		this.name = name;
+	}
+	
+	public void showInfo() {
+		System.out.println("이름 : " + this.name + ", 주소 : " + this.address +
+				", 직업 : " + this.job + ", 나이 : " + this.age);
+	}
+	
+}
+
+2. 1번에서 만든 Member클래스를 사용해서
+'홍길동', '이순신' 인스턴스를 생성해보시오.
+
+package exercise;
+
+public class excercise1 {
+	
+	public static void main(String[] args) {
+		Member 홍길동 = new Member();
+		Member 이순신 = new Member();
+	}
+	
+}
+
+
+3. 1번클래스를 이용해서, 이름,주소,직업,나이를 
+키보드로 입력받아 정보를 출력하시오. 
+- scanner 사용
+
+package exercise;
+
+import java.util.Scanner;
+
+public class excercise2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Member member;
+		System.out.println("이름을 입력하세요.");
+		String name = sc.next();
+		System.out.println("주소를 입력하세요.");
+		String address = sc.next();
+		System.out.println("직업을 입력하세요.");
+		String job = sc.next();
+		System.out.println("나이를 입력하세요.");
+		int age = sc.nextInt();
+		
+		member = new Member(name, address, job, age);
+		
+		member.showInfo();
+	}
+}
+
