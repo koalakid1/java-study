@@ -1,0 +1,82 @@
+1. 마우스 클래스를 생성하시오.
+왼쪽버튼, 오른쪽버튼, mouseMove()
+package exercise;
+
+class mouse{
+	
+	public String mousebutton;
+	
+	public mouse() {
+		
+		this.mousebutton = "None";
+		
+	}
+	
+	public void leftmouse(){
+		
+		this.mousebutton = "left";
+		
+	}
+	
+	public void rightmouse(){
+		
+		this.mousebutton = "right";
+		
+	}
+	
+	public void mouseMove() {
+		System.out.println(this.mousebutton);
+	}
+}
+2. 휠마우스 클래스를 마우스클래스를 상속받아서 생성하시오.
+스크롤휠 추가
+package exercise;
+
+public class scroll extends mouse {
+	
+	public void scrollwheel() {
+		
+		this.mousebutton = "scroll";
+		
+	}
+		
+}
+
+3. 레이저마우스 클래스를 휠마우스 클래스를 상속받아서 생성하시오.
+광원(레이저) 오버라이딩
+package exercise;
+
+public class razer extends scroll{
+	public void scrollwheel() {
+		
+		this.mousebutton = "razer";
+		
+	}
+}
+4. 1~3번의 인스턴스를 생성하시오.
+package exercise;
+
+public class usemouse {
+	public static void main(String[] args) {
+		mouse a = new mouse();
+		scroll b = new scroll();
+		scroll c = new razer();
+		
+		a.mouseMove();
+		a.leftmouse();
+		a.mouseMove();
+		a.rightmouse();
+		a.mouseMove();
+		b.scrollwheel();
+		b.mouseMove();
+		c.scrollwheel();
+		c.mouseMove();
+	}
+}
+
+console 결과
+None
+left
+right
+scroll
+razer
