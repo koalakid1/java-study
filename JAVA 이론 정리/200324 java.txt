@@ -1,0 +1,4 @@
+Wrapper 클래스
+: 기본 타입을 클래스화
+:ArrayList 와 같은 Collection에서는 클래스만 처리가능
+기본타입 대신 Wrapper클래스 사용
