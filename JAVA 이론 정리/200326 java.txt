@@ -1,0 +1,22 @@
+isDirectory(), isFile()
+
+is~() 형태의 이름을 가진 함수는 리턴값이 boolean
+A is B? 에서 따온 이름.
+
+===================================
+
+CLI(Command Line Interface)
+: 명령어(Command)를 사용하는 인터페이스
+예) MS-DOS
+
+GUI(Graphic User Interface)
+: Graphic기반의 사용자 인터페이스
+예) MS-Windows, MacOS
+
+==============================
+
+Event
+:응용프로그램을 사용하면서 발생하는 모든 일
+
+Event기반 프로그래밍
+: 어떤 이벤트가 발생했을 때 어떤 일을 수행하도록 프로그래밍

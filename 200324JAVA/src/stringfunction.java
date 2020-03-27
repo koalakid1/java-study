@@ -23,7 +23,6 @@ public class stringfunction{
 		System.out.println(fileName3.substring(fileName3.lastIndexOf('.')+1));
 		
 		String fileName4 = "abcd.zip";
-		fileName4.
 		
 	}
 	
