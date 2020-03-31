@@ -7,8 +7,8 @@ public class exercise3 extends JFrame{
 	Container c;
 	JTextField[] tf  = new JTextField[4];
 	
-	int[] data = {0,0,0,0};
-	int[] arcAngle = {0,0,0,0};
+	static int[] data = {0,0,0,0};
+	static int[] arcAngle = {0,0,0,0};
 	
 	Color[] color ={Color.RED, Color.BLUE,Color.MAGENTA, Color.ORANGE};
 	String[] itemName = {"apple", "banana", "kiwi", "mango"};
@@ -34,16 +34,25 @@ public class exercise3 extends JFrame{
 				public void actionPerformed(ActionEvent e) {
 					JTextField t = (JTextField) e.getSource();
 					int n = Integer.parseInt(t.getText());
-					drawchart = new drawchart();
+					repaint();
 				}
 			});
+			
+
+		}
+		int sum = 0;
+		for (int i = 0; i < tf.length; i++) {
+			data[i] = Integer.parseInt(tf[i].getText());
+			sum += data[i];
+		}
+		for (int i = 0; i < data.length; i++) {
+			arcAngle[i] = (int)Math.round((double)data[i]/(double)sum *360);
 		}
 		
-
+		System.out.println(tf[1].getText());
 		
 		c.add(drawchart);
-		
-		
+
 		setSize(550,300);
 		setVisible(true);
 	}
@@ -54,15 +63,7 @@ public class exercise3 extends JFrame{
 		protected void paintComponent(Graphics g) {
 			
 			super.paintComponent(g);
-			
-			int sum = 0;
-			for (int i = 0; i < tf.length; i++) {
-				data[i] = Integer.parseInt(tf[i].getText());
-				sum += data[i];
-			}
-			for (int i = 0; i < data.length; i++) {
-				arcAngle[i] = (int)Math.round((double)data[i]/(double)sum *360);
-			}
+
 			
 			int startAngle = 0;
 			
