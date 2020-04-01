@@ -1,10 +1,13 @@
 package haksa;
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -46,7 +49,7 @@ public class haksa extends JFrame{
 		tfaddress = new JTextField(20);
 		c.add(tfaddress);
 		
-		taList = new JTextArea(10,20);
+		taList = new JTextArea(10,23);
 		c.add(new JScrollPane(taList));
 		
 		btnlist = new JButton("목록");
@@ -54,12 +57,28 @@ public class haksa extends JFrame{
 		btnupdate = new JButton("수정");
 		btndelete = new JButton("삭제");
 		
+		btndelete.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int result = JOptionPane.showConfirmDialog(null, "삭제하시겠습니까?","삭제", JOptionPane.YES_NO_OPTION);
+				if (result == JOptionPane.YES_OPTION) {
+					
+					//삭제 처리. db 연동해서 삭제
+					System.out.println("삭제처리....");
+					
+					//삭제처리완료 메세지 출력
+					JOptionPane.showMessageDialog(null, "삭제되었습니다.","알림",JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
+		
 		c.add(btnlist);
 		c.add(btninsert);
 		c.add(btnupdate);
 		c.add(btndelete);
 		
-		setSize(300,300);
+		setSize(300,400);
 		setVisible(true);
 	}
 	

@@ -46,8 +46,7 @@ public class exercise4 extends JFrame{
 		
 		setSize(570,400);
 		setVisible(true);
-		repaint();
-		
+
 	}
 	
 	class drawaction implements ActionListener{

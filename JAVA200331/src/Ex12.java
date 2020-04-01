@@ -2,14 +2,22 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
+import javax.swing.JColorChooser;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+
+import MenuAndColorChooserEx.MenuActionListener;
 
 public class Ex12 extends JFrame{
 
@@ -21,9 +29,40 @@ public class Ex12 extends JFrame{
 		
 		this.setContentPane(panel);
 		
+		createMenu();
+		
 		this.setSize(500, 500);
 		this.setVisible(true);
 	}
+	
+	private void createMenu() {
+		JMenuBar mb = new JMenuBar();
+		JMenuItem colorMenuItem = new JMenuItem("Color");
+		JMenu fileMenu = new JMenu("설정");
+		
+		// Color 메뉴아이템에 Action 리스너 등록
+		colorMenuItem.addActionListener(new MenuActionListener());
+		
+		fileMenu.add(colorMenuItem);
+		mb.add(fileMenu);
+		this.setJMenuBar(mb);
+	}
+	
+	// Color 메뉴아이템이 선택될 때 실행되는 Action 리스너
+	class MenuActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			String cmd = e.getActionCommand(); // 메뉴아이템의 이름 리턴
+			if(cmd.equals("Color")) { // Color 메뉴아이템의 경우
+				// 컬러 다이얼로그를 출력하고 사용자가 선택한 색을 알아온다.
+				Color selectedColor = JColorChooser.showDialog(null,"Color",Color.YELLOW);
+				
+				// 취소 버튼을 누르거나 그냥 다이얼로그를 닫는 경우 selectedColor는 null이다.
+				if(selectedColor != null) 
+					panel.getting(selectedColor);
+			}
+		}
+	}
+
 		
 	class MyPanel extends JPanel{
 
@@ -71,11 +110,17 @@ public class Ex12 extends JFrame{
 				
 				});
 		}
+		Color selectedColor = Color.black;
 		
+		void getting(Color selectedColor) {
+			
+			this.selectedColor = selectedColor;
+			
+		}
 		@Override
 		protected void paintComponent(Graphics g) {			
 			super.paintComponent(g);
-			
+			g.setColor(selectedColor);
 			for(int i=0;i<aPoint.size();i++) {
 				//첫번째 점이거나 이전 점이 마지막 점이면
 				if(i==0 || aPointFlag.get(i-1)==true) {
