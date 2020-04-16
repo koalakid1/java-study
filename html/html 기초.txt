@@ -1,0 +1,66 @@
+MS는 Active-X, Plug-in 등
+표준기술이 아닌 외부기술을 사용하고 싶어함.
+
+ex) Flash를 이용해서 Rich Contents 개발
+
+Apple의 잡스는 Flash를 싫어함. => Safari 브라우저에서 사용 불가.
+=>MS를 필두로 전문가들이 Safari에서 flash도입 권유
+=>잡스가 거부
+
+WHATWG결성 웹표준 기술 개발 주도.	
+=>W3가 WHATWG 지지
+
+XHTML
+=> HTML에 XML의 문법을 도입
+=> HTML4, HTML5에 흡수됨
+XML(eXtensible Markup Language)은 대소문자 구분이 있음.시작태그와 끝태그가 항상 존재
+===============================
+
+HTML5에서는 문서에 heading이 꼭 있는 것이 권장사항.
+
+emmit 플러그인
+=> 단축키, 단축코드로 html, css를 빠르게 코딩
+
+=============================================
+Screen Reader기
+:시각장애인들을 위해서
+웹페이지를 읽어주는 장치
+
+==================================
+HTML5의 철학
+
+HTML is for Everything.
+=> 웹은 사람, Device 모든 것을 위해 존재한다.
+
+Internet of Things
+=> 사물인터넷
+
+=====================================
+
+Modern Web에서 사용하지 않는 태그
+1.<br>
+:줄바꿈 / 한줄 변경할때만 사용
+=> 여러줄을 띄울 때는 css로
+
+2.<table>
+:표형태로 출력할때만 사용
+=> layout을 설정할때는 사용하지 않음
+=><div>, 시맨틱태그와 css
+
+3.<font>
+:폐지
+=> 글자와 관련된 부분은 css로
+
+4.<frame>
+:폐지
+=> 화면분할을 더이상 사용하지 않음. <iframe>만 존재.
+
+===========================================
+
+Block Level Element
+:한 줄 전체를 영역으로 설정. 줄이 바뀜. width, height 설정가능
+예) <h1>, <p>, <div> 등등
+
+Inline Level Element
+:컨텐츠(글자 or image)의 길이 만큼만 영역으로 설정. 줄이 안바뀜. width, height 설정 불가
+예) <i>, <b>, <span> 등등

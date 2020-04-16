@@ -6,7 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 import java.sql.ResultSet;
+
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,14 +20,14 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class Student extends JPanel{
+	static ResultSet rs;
 	
 	JTextField tfid = null ;
 	JTextField tfname = null ;
 	JTextField tfdept = null;
 	JTextField tfaddress = null;
 	
-	static ResultSet rs;
-	DefaultTableModel model;
+	
 	
 	JButton btnlist = null;
 	JButton btninsert = null;
@@ -32,34 +35,46 @@ public class Student extends JPanel{
 	JButton btndelete = null;
 	JButton btnsearch = null;
 	
+	DefaultTableModel model;
 	JTable table;
 	
 	public Student() {
-
 		setLayout(new FlowLayout());
 		
-		add(new JLabel("학번"));
+		JPanel Pid = new JPanel();
+		Pid.add(new JLabel("학번"));
 		tfid = new JTextField(14);
-		add(tfid);
+		Pid.add(tfid);
 		btnsearch = new JButton("검색");
-		add(btnsearch);
+		Pid.add(btnsearch);
+		add(Pid);
 		
-		add(new JLabel("이름"));
+		JPanel Pname = new JPanel();
+		Pname.add(new JLabel("이름"));
 		tfname = new JTextField(20);
-		add(tfname);
+		Pname.add(tfname);
+		add(Pname);
 		
-		add(new JLabel("학과"));
+		JPanel Pdept = new JPanel();
+		Pdept.add(new JLabel("학과"));
 		tfdept = new JTextField(20);
-		add(tfdept);
+		Pdept.add(tfdept);
+		add(Pdept);
 		
-		add(new JLabel("주소"));
+		JPanel Paddress = new JPanel();
+		Paddress.add(new JLabel("주소"));
 		tfaddress = new JTextField(20);
-		add(tfaddress);
+		Paddress.add(tfaddress);
+		add(Paddress);
 		
 		String colName[]={"학번","이름","학과","주소"};
 		model=new DefaultTableModel(colName,0);
 		table = new JTable(model);
-		table.setPreferredScrollableViewportSize(new Dimension(250,200));
+		table.setPreferredScrollableViewportSize(new Dimension(300,200));
+		table.getColumnModel().getColumn(0).setPreferredWidth(70);  //JTable 의 컬럼 길이 조절
+		table.getColumnModel().getColumn(1).setPreferredWidth(50);
+		table.getColumnModel().getColumn(2).setPreferredWidth(60);
+		table.getColumnModel().getColumn(3).setPreferredWidth(120);
 		add(table);
 		add(new JScrollPane(table));
 		
@@ -196,13 +211,13 @@ public class Student extends JPanel{
 		add(btnupdate);
 		add(btndelete);
 		
-		setSize(280,500);
+		setSize(350,450);
 		setVisible(true);
 	}
 	public void list(){
 		try{ 
 		    // Select문 실행
-		    ResultSet rs= haksa.stmt.executeQuery("select * from student");
+		    ResultSet rs=haksa.stmt.executeQuery("select * from student");
 		   
 		    //JTable 초기화
 		    model.setNumRows(0);

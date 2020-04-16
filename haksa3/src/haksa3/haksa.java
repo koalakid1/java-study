@@ -69,13 +69,13 @@ public class haksa extends JFrame{
  			}	
  		});
    
- 		JMenuItem mi_booklist = new JMenuItem("도서정보");
- 		m_book.add(mi_booklist);
- 		
- 		JMenuItem mi_bookRent=new JMenuItem("대출목록");
+// 		JMenuItem mi_booklist = new JMenuItem("도서정보");
+// 		m_book.add(mi_booklist);
+// 		
+ 		JMenuItem mi_bookRent=new JMenuItem("도서정보");
  		m_book.add(mi_bookRent);
  		
- 		JMenuItem mi_chart=new JMenuItem("현황차트");
+ 		JMenuItem mi_chart=new JMenuItem("대출현황차트");
  		m_book.add(mi_chart);
  		
  		mi_bookRent.addActionListener(new ActionListener(){
@@ -102,23 +102,23 @@ public class haksa extends JFrame{
  		});
  		
 
- 		mi_booklist.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				panel.removeAll();
-				panel.revalidate();
-				panel.repaint();
-				panel.add(new BookList());
-				panel.setLayout(null);	
-			}
-		});
+// 		mi_booklist.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				panel.removeAll();
+//				panel.revalidate();
+//				panel.repaint();
+//				panel.add(new BookList());
+//				panel.setLayout(null);	
+//			}
+//		});
   
  		panel=new JPanel();//panel생성
  		add(panel);//프레임에 패널 추가
   
  		setJMenuBar(bar);
- 		setSize(800,520);
+ 		setSize(400,570);
  		setLocationRelativeTo(null);
  		setVisible(true);
 	}
