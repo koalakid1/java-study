@@ -40,13 +40,14 @@ public class haksa extends JFrame{
 					if(conn!=null){
 						conn.close();
 					}
+					dispose();
 				} catch (SQLException e1) {
 			    		e1.printStackTrace();	
 				}	
 			}	
 		});
 		setTitle("학사관리시스템"); 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//x버튼 누르면 프로그램 종료  
+
 		JMenuBar bar=new JMenuBar();
   
 		JMenu m_student=new JMenu("학생관리");//File메뉴

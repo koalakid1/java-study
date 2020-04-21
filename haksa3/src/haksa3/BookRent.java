@@ -51,7 +51,7 @@ public class BookRent extends JPanel{
 	    btnBook.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				add(new BookList());
+				new BookList();
 			}
 		});
 	    

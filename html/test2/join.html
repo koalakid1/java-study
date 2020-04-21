@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <h3>회원가입</h3>
+    <form action="join.jsp" method="POST">
+        ID <input type="text" name="id"><br>
+        Name <input type="text" name="name"><br>
+        PW <input type="password" name="pw"><br>
+        Email <input type="text" name="email"><br>
+        Email수신 <input type="radio" value="예" name="emailYN">예
+                    <input type="radio" value="아니오" name="emailYN">아니오 <br>
+        취미 <INPUT type="checkbox" value="운동" name="hobby1">운동</INPUT>
+        <INPUT type="checkbox" value="독서" name="hobby2">독서</INPUT>
+        <INPUT type="checkbox" value="등산" name="hobby3">등산</INPUT>
+        <INPUT type="checkbox" value="낚시" name="hobby4">낚시</INPUT><br>
+        직업 <select name="jop" id="">
+            <option value="학생">학생</option>
+            <option value="직장인">직장인</option>
+            <option value="군인">군인</option>
+            <option value="기타">기타</option>
+        </select> <br>
+        자기소개 <br>
+        <textarea name="introduce" id="" cols="50" rows="10"></textarea> <br>
+        사진 <input type="file" name="picture"> <br>
+        <input type="submit" name="등록" value="등록">
+    </form>
+</body>
+</html>

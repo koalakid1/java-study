@@ -48,8 +48,10 @@ public class BookList extends JFrame{
 	
 	public BookList() {
 		setTitle("대출 관리");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new FlowLayout());
+		
+		init();
 		
 		JPanel PBookNo = new JPanel();
 		PBookNo.add(new JLabel("도서번호"));
@@ -57,19 +59,19 @@ public class BookList extends JFrame{
 		PBookNo.add(tfBookno);
 		btnsearch = new JButton("검색");
 		PBookNo.add(btnsearch);
-		add(PBookNo);
+		this.add(PBookNo);
 		
 		JPanel PBookName = new JPanel();
 		PBookName.add(new JLabel("  도서명  "));
 		tfBookName = new JTextField(20);
 		PBookName.add(tfBookName);
-		add(PBookName);
+		this.add(PBookName);
 		
 		JPanel PAuthor = new JPanel();
 		PAuthor.add(new JLabel("    저자     "));
 		tfAuthor = new JTextField(20);
 		PAuthor.add(tfAuthor);
-		add(PAuthor);
+		this.add(PAuthor);
 		
 		String colName[]={"도서번호","도서명","저자","대여수"};
 		model=new DefaultTableModel(colName,0);
@@ -79,8 +81,8 @@ public class BookList extends JFrame{
 		table.getColumnModel().getColumn(1).setPreferredWidth(100);
 		table.getColumnModel().getColumn(2).setPreferredWidth(100);
 		table.getColumnModel().getColumn(3).setPreferredWidth(45);
-		add(table);
-		add(new JScrollPane(table));
+		this.add(table);
+		this.add(new JScrollPane(table));
 		
 		btnlist = new JButton("목록");
 		btninsert = new JButton("입력");
@@ -213,15 +215,15 @@ public class BookList extends JFrame{
 			}
 		});
 		
-		add(btnlist);
-		add(btninsert);
-		add(btnupdate);
-		add(btndelete);
+		this.add(btnlist);
+		this.add(btninsert);
+		this.add(btnupdate);
+		this.add(btndelete);
 		
 		JPanel Prental = new JPanel();
 		Prental.add(new JLabel("대여 / 반납 처리 "),BorderLayout.CENTER);
 		Prental.getSize(new Dimension(300,20));
-		add(Prental);
+		this.add(Prental);
 		
 		JPanel Pstudent = new JPanel();
 		Pstudent.add(new JLabel("학번"));
@@ -230,15 +232,15 @@ public class BookList extends JFrame{
 		Pstudent.add(new JLabel("도서번호"));
 		tfno = new JTextField(10);
 		Pstudent.add(tfno);
-		add(Pstudent);
+		this.add(Pstudent);
 		
 		btnBorrow = new JButton("대여");
 		btnBorrow.setPreferredSize(new Dimension(100,20));
-		add(btnBorrow);
+		this.add(btnBorrow);
 		
 		btnReturn = new JButton("반납");
 		btnReturn.setPreferredSize(new Dimension(100,20));
-		add(btnReturn);
+		this.add(btnReturn);
 		
 		btnBorrow.addActionListener(new ActionListener() {
 			@Override
@@ -289,6 +291,17 @@ public class BookList extends JFrame{
 		setSize(350,600);
 		setVisible(true);
 	}
+	
+	public void init() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				setVisible(false);
+				dispose();
+			}
+		});
+	}
+	
 	public void list(){
 		try{ 
 		    // Select문 실행

@@ -1,0 +1,19 @@
+절대경로
+: root directory를 기준으로 표기
+
+http://www.naver.com/ => root directory를 가리킴
+
+localhost
+/ => root directory
+
+상대경로
+:현재 directory를 기준으로 표기
+
+./ => 현재 directory   ./ todfirrksmd
+
+<a href = "./content.html">
+<a href = "content.html">
+
+뎁스가 깊어지면 절대경로 추천.
+
+상대경로 표기법에서 상위 디렉토리는 ../

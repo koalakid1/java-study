@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav{
+            width: 300px;
+            height: 50px;
+            line-height: 50px;
+            list-style-type: none;
+            background-color: #ddd;
+        }
+        #nav li{
+            float: left;
+        }
+        #nav li a{
+            padding: 10px;
+            text-decoration: none;
+        }
+        #nav li a{
+            color:gray
+        }
+        #nav li a:hover{
+            color: black;
+            background-color: red;
+        }
+        .active{
+            color:white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Vertical Navigation Bar</h2>
+
+
+    <h1>Horizontal Navigation Bar</h1>
+    <ul id = "nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a class="active" href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+</body>
+</html>

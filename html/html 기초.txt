@@ -64,3 +64,7 @@ Block Level Element
 Inline Level Element
 :컨텐츠(글자 or image)의 길이 만큼만 영역으로 설정. 줄이 안바뀜. width, height 설정 불가
 예) <i>, <b>, <span> 등등
+
+display:Inline-Block;
+:Inline Element 처럼 줄이 바뀌지 않음. width, height 설정 가능
+=> Inline Emement를 박스처럼 만들 때 사용한다.
