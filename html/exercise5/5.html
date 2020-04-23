@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <style>
+        div{
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            left: 50%;
+            top: 50%;
+        }
+        div #loading{
+            position: relative;
+            border: 26px solid #f3f3f3;
+            border-radius: 50%;
+            -webkit-animation: exercise3 2s linear infinite;
+            border-top-color: red;
+        }
+        p{
+            position: relative;
+            left: 100%;
+            bottom: 30%;
+        }
+        @-webkit-keyframes exercise3 {
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="loading"></div>
+        <p>loading</p></div>
+    
+</body>
+</html>

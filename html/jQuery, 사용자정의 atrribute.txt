@@ -1,0 +1,12 @@
+jQuery
+:javascript library
+=> javascript를 쉽게 사용할 수 있도록 만든 라이브러리
+=> DOM(Document Object Model)작업, Ajax작업에 많이 활용됨
+=> 현재 거의 표준.
+
+jQuery Mobile
+=>jQuery기반의 모바일웹페이지 제작을 위한 css 프레임워크
+===========================================
+사용자정의 Attribute
+: 태그의 Attribute를 개발자가 만들어 사용
+ex) data-id, data-no, data-idx 등

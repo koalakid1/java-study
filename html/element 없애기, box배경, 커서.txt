@@ -1,0 +1,26 @@
+CSS로 element를 안보이게
+
+1.display:none;
+
+2.opacity:0;
+
+3.visibility:hidden;
+
+4.left:-200px;
+
+5.top:-200px;
+
+6.bottom:-200px;
+
+7.right:-200px;
+
+8.transform:scale(0);
+
+=======================
+background-size:cover
+=>박스에 배경이미지를 넣을 때, 배경이미지의 원본비율을
+    유지하면서 박스를 가득채움
+
+cursor:pointer;
+=>링크가 아닌 엘리먼트에 마우스 커서가 위치했을 때도
+    커서모양이 손모양으로 번경됨. 사용자의 클릭을 유도
