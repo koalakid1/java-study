@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Invisible Guest</title>
+    <style>
+        .header{
+            background-color: rgb(36, 36, 58) !important;
+            text-shadow: none !important;
+            color: white !important;
+        }
+        .ui-btn-active{
+            background-color: rgb(36, 36, 58) !important;
+            border: 1px solid gray !important;
+        }
+        .ui-grid-a{
+            font-size: 12px;
+        }
+        .ui-grid-a img{
+            float: left;
+            margin-right: 5px;
+            width: 111px !important;
+            height: 139px !important;
+        }
+        .ui-grid-a h4{
+            color: rgb(20, 20, 112);
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+        .ui-grid-a p{
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+        .ui-grid-a span{
+            color: rgb(136, 6, 6);
+        }
+        .footer{
+            background-color: rgb(36, 36, 58) !important;
+            text-shadow: none !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" class="header">
+            <a href="index.html" rel="external" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+            <h3>영화소개</h3>
+            <a href="index.html" rel="external" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li>
+                <a href="introduce01.html" rel="external">영화줄거리</a>
+                </li>
+                <li>
+                    <a href="#" rel="external" class="ui-btn-active">등장인물</a>
+                </li>
+                <li>
+                    <a href="introduce03.html" rel="external">영화평점</a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="content">
+            <h3>등장인물</h3>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/img01.jfif" alt="마리오 카사스">
+                    <h4>마리오 카사스</h4>
+                    <p>
+                        Mario Casas <br>
+                        <span>주연</span> | 아드리안 도리아 역
+                    </p>
+                    <p>
+                        아디오스,2019 <br>
+                        엘 포토그라포 드 마우트하우젠,2018
+                    </p>
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/img02.jfif" alt="바바라 레니">
+                    <h4>바바라 레니</h4>
+                    <p>
+                        Barbara Lennie <br>
+                        <span>주연</span> | 로라 비달 역
+                    </p>
+                    <p>
+                        페트라,2018 <br>
+                        라 엔페르메다드 델 도밍고,2018
+                    </p>
+                </div>
+            </div>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/img03.jfif" alt="호세 코로나도">
+                    <h4>호세 코로나도</h4>
+                    <p>
+                        Jose Coronado <br>
+                        <span>주연</span> | 토마스 가리도 역
+                    </p>
+                    <p>
+                        왓 어바웃 러브,2021 <br>
+                        유어 선,2018
+                    </p>
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/img04.jfif" alt="안나 와게너">
+                    <h4>안나 와게너</h4>
+                    <p>
+                        Ana Wagener <br>
+                        <span>주연</span> | 버지니아 굿맨 역
+                    </p>
+                    <p>
+                        유어 선,2018 <br>
+                        더 렐름,2018
+                    </p>
+                </div>
+            </div>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/img05.jfif" alt="프란체스크 오렐라">
+                    <h4>프란체스크 오렐라</h4>
+                    <p>
+                        Francesc Orella <br>
+                        <span>조연</span> | 펠릭스 역
+                    </p>
+                    <p>
+                        러브 미 낫,2019 <br>
+                        브라바,2017
+                    </p>
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/img06.jfif" alt="데이빗 셀바스">
+                    <h4>데이빗 셀바스</h4>
+                    <p>
+                        David Selvas <br>
+                        <span>조연</span> | 브루노 역
+                    </p>
+                    <p>
+                        인비저블 게스트,2016 <br>
+                        더 로스트,2009
+                    </p>
+                </div>
+            </div>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/img07.jfif" alt="이니고 가스테시">
+                    <h4>이니고 가스테시</h4>
+                    <p>
+                        Inigo Gastesi <br>
+                        <span>조연</span> | 다니엘 가리도 역
+                    </p>
+                    <p>
+                        인비저블 게스트,2016
+                    </p>
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/img08.jfif" alt="산 옐라모스">
+                    <h4>산 옐라모스</h4>
+                    <p>
+                        San Yelamos <br>
+                        <span>조연</span> | 소니아 역
+                    </p>
+                    <p>
+                        인비저블 게스트,2016
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" class="footer">
+            <h3>&copy;CGV All rights reserved.</h3>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Invisible Guest</title>
+    <style>
+        .header{
+            background-color: rgb(36, 36, 58) !important;
+            text-shadow: none !important;
+            color: white !important;
+        }
+        .footer{
+        background-color: rgb(36, 36, 58) !important;
+        text-shadow: none !important;
+        color: white !important;
+    }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" class="header">
+            <a href="index.html" rel="external" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+            <h3>영화관위치</h3>
+            <a href="index.html" rel="external" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+        </div>
+        <div data-role="content">
+            <img src="img/CGVgangnam.jpg" alt="CGV강남" width="100%">
+            <!-- 카카오맵 ----------------------------------------------->
+            <div id="kakaomap" style="width: 100%;height: 500px;"></div>
+            <script type="text/javascript"
+                src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8ecf9f4004cf79c54e2809039a588687"></script>
+            <script>
+                $(document).ready(function () {
+                    var mapContainer = document.getElementById('kakaomap'), // 지도를 표시할 div 
+                        mapOption = {
+                            center: new daum.maps.LatLng(37.501567, 127.026319), // 지도의 중심좌표
+                            level: 3 // 지도의 확대 레벨
+                        };
+
+                    var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                    // 마커가 표시될 위치입니다 
+                    var markerPosition = new daum.maps.LatLng(37.501567, 127.026319);
+
+                    // 마커를 생성합니다
+                    var marker = new daum.maps.Marker({
+                        position: markerPosition
+                    });
+
+                    // 마커가 지도 위에 표시되도록 설정합니다
+                    marker.setMap(map);
+                });
+
+
+            </script>
+            <!-- 카카오맵.끝.-->
+            <h5>서울특별시 강남구 역삼동 814-6 스타플렉스 <br>
+                서울특별시 강남구 강남대로 438 (역삼동)</h5>
+        </div>
+        <div data-role="footer" class="footer">
+            <h3>&copy;CGV All rights reserved.</h3>
+        </div>
+    </div>
+</body>
+
+</html>
