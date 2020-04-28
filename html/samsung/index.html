@@ -1,53 +1,912 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/ce3fb13d84.js" crossorigin="anonymous"></script>  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div id="demo" class="carousel slide" data-ride="carousel">
 
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- animate.css -->
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- fontawesome ------------------------------------------------>
+  <script src="https://kit.fontawesome.com/ce3fb13d84.js" crossorigin="anonymous"></script>
+  <!-- google font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Acme&family=Black+Han+Sans&family=Do+Hyeon&family=Prompt:wght@500&display=swap"
+    rel="stylesheet">
+  <script>
+    $(document).ready(function () {
+
+      $('nav a').on('click', function () {
+        var width = $(window).width();
+        if (width < 768) {
+          // $('.btn-navbar').click();
+          // $('.navbar').click();
+          $('.navbar-toggler').click();
+        }
+      })
+
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, #up[href='#slider01']").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    })
+  </script>
+  <style>
+
+    #slider01 .carousel-indicators {
+      position: absolute;
+      top: 150px;
+    }
+
+    #slider01 .carousel-indicators>li,
+    #slider01 .carousel-indicators>li.active {
+      width: 150px;
+      height: 25px;
+      color: rgb(245, 62, 62);
+      filter: drop-shadow(2px 2px 10px #000000);
+      font-size: 22px;
+      font-family: 'Black Han Sans', sans-serif;
+      background: rgba(255, 255, 255, 0);
+      text-indent: 0;
+      text-align: center;
+    }
+
+    #slider02 .carousel-indicators {
+      position: absolute;
+      top: 150px;
+    }
+
+    .card-body {
+      font-family: 'Do Hyeon', sans-serif;
+    }
+
+    #slider02 .carousel-indicators>li,
+    #slider02 .carousel-indicators>li.active {
+      width: 150px;
+      height: 25px;
+      border-radius: 0;
+      color: rgb(0, 0, 0);
+      filter: drop-shadow(2px 2px 10px #fdf9f9);
+      font-size: 22px;
+      font-family: 'Black Han Sans', sans-serif;
+      background: rgba(255, 255, 255, 0);
+      text-indent: 0;
+      text-align: center;
+    }
+
+    #slider02 .carousel-caption {
+      font-family: 'Do Hyeon', sans-serif;
+    }
+
+    #pctext {
+      position: absolute;
+      height: auto;
+      margin-left: 0;
+      margin-top: 0;
+      left: -220px;
+      top: 20%;
+      font-family: 'Do Hyeon', sans-serif;
+      display: block;
+      filter: drop-shadow(2px 2px 10px #000000);
+    }
+    #motext {
+      display: none;
+    }
+    
+
+    #vid01_pc,
+    #img01_pc,
+    #vid02_pc,
+    #zflip_pc {
+      display: block;
+    }
+
+    #vid01_mo,
+    #img01_mo,
+    #vid02_mo,
+    #zflip_mo {
+      display: none;
+    }
+
+
+    @media screen and (max-width: 768px) {
+      #slider01 .carousel-inner {
+        width: 100%;
+      }
+      #slider01 .carousel-indicators {
+        top: 90%;
+        bottom: 50px;
+      }
+
+      #pctext {
+      display: none;
+      }
+      #motext {
+        position: absolute;
+        width: 768px;
+        height: auto;
+        margin-left: 0;
+        margin-top: 0;
+        left: -180px;
+        top: 20%;
+        text-align: center;
+        font-family: 'Do Hyeon', sans-serif;
+        display: block;
+        filter: drop-shadow(2px 2px 10px #000000);
+      }
+
+      #vid01_pc,
+      #img01_pc,
+      #vid02_pc,
+      #zflip_pc {
+        display: none;
+      }
+
+      #vid01_mo,
+      #img01_mo,
+      #vid02_mo,
+      #zflip_mo {
+        display: block;
+      }
+    }
+
+    #story,
+    #plus {
+      font-family: 'Do Hyeon', sans-serif;
+      position: relative;
+      top: 100px;
+      font-size: 20px;
+    }
+
+    .modal-content {
+      width: 700px;
+    }
+
+    @media screen and (max-width:992px) {
+      #plus {
+        top: -20px;
+      }
+
+      #story {
+        display: none;
+      }
+
+      .modal-content {
+        width: 500px !important;
+      }
+
+    }
+
+    #subMenu {
+      border-top: 1px solid lightgray;
+    }
+
+    #subMenu .col-sm-2 {
+      border-left: 1px solid lightgray;
+    }
+
+    #subMenu ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    #subMenu h4 {
+      font-size: 15px;
+    }
+
+    #subMenu li {
+      list-style: none;
+      padding-left: 0px;
+      left: -20px;
+      font-size: 8px;
+    }
+
+    .navbar {
+      font-family: 'Do Hyeon', sans-serif;
+      font-size: 20px;
+      margin-bottom: 0;
+      background-color: #ffffff !important;
+      z-index: 20;
+    }
+
+    .navbar li a,
+    .navbar .navbar-brand {
+      color: rgb(0, 0, 0) !important;
+    }
+
+    .navbar-nav li a:hover,
+    .navbar-nav li.active a {
+      color: rgb(245, 62, 62) !important;
+      background-color: #fff !important;
+    }
+
+    .navbar-toggler {
+      background-color: black;
+    }
+
+
+    .modal-body h4 {
+      color: rgb(245, 62, 62);
+    }
+
+    .logo-footer {
+      font-size: 30px;
+      color: #000000;
+      padding: 20px 55px;
+    }
+
+    .nav-pills{
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- carousel --------------------------------------------------------->
+  <div id="slider01" class="carousel slide" data-ride="carousel" style="margin-bottom: 20px; padding-top: 100px;">
+    <!-- Indicators ------------------------------------>
+    <ul class="carousel-indicators">
+      <li data-target="#slider01" data-slide-to="0" class="active">BESPOKE</li>
+      <li data-target="#slider01" data-slide-to="1">Galaxy S20</li>
+      <li data-target="#slider01" data-slide-to="2">Galaxy Z Flip</li>
+      <li data-target="#slider01" data-slide-to="3">QLED 8K</li>
+    </ul>
+    <!-- Indicators -->
+
+    <!-- The slideshow ---------------------------------------------->
+    <div class="carousel-inner" style="width: 100%;">
+      <div id="box1" class="carousel-item active"> <video id="vid01_pc" width="100%" muted autoplay loop>
+          <source
+            src="https://images.samsung.com/is/content/samsung/p5/sec/home/2020/p6/kv/0424/0424_BESPOKE_video_PC_1920_810_v3.mp4"
+            type="video/mp4">
+        </video>
+        <video id="vid01_mo" muted autoplay loop>
+          <source
+            src="https://images.samsung.com/is/content/samsung/p5/sec/home/2020/p6/kv/0424/0424_BESPOKE_video_MO_1920_810_v3.mp4"
+            type="video/mp4">
+        </video>
+        <div id="pctext" class="carousel-caption">
+          <h1>2020 NEW</h1>
+          <h1>BESPOKE 런칭</h1>
+          <h3>새로운 컬러, 업그레이드된 스펙 <br>
+            BESPKE 신제품을 지금 바로 만나보세요
+          </h3>
+          <button type="button" class="btn btn-light">구매 혜택 보기</button>
+        </div>
+        <div id="motext" class="carousel-caption">
+          <h1>2020 NEW</h1>
+          <h1>BESPOKE 런칭</h1>
+          <h3>새로운 컬러, 업그레이드된 스펙 <br>
+            BESPKE 신제품을 지금 바로 만나보세요
+          </h3>
+          <button type="button" class="btn btn-light">구매 혜택 보기</button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img id="img01_pc" src="img/home_kv_01_pc_1920x810.webp" width="100%" alt="Los Angeles">
+        <img id="img01_mo" src="img/home_kv_01_mo_720x1480.webp" width="100%" alt="Los Angeles">
+        <div id="pctext" class="carousel-caption">
+          <h1>GALAXY S20</h1>
+          <h1>S20+|S20</h1>
+          <h1>Ultra 5G</h1>
+          <button type="button" class="btn btn-light">구매 혜택 보기</button>
+        </div>
+        <div id="motext" class="carousel-caption">
+          <h1>GALAXY S20</h1>
+          <h1>S20+|S20</h1>
+          <h1>Ultra 5G</h1>
+          <button type="button" class="btn btn-light">구매 혜택 보기</button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img id="zflip_pc" src="img/zflip-pc.webp" width="100%" alt="Los Angeles">
+        <img id="zflip_mo" src="img/zflip-mo.webp" width="100%" alt="Los Angeles">
+        <div id="pctext" class="carousel-caption" style="color: black;">
+          <h1>Galaxy Z Flip</h1>
+          <h3>스마트폰의 새로운 가능성을 펼치다</h3>
+          <button type="button" class="btn btn-dark">구매 혜택 보기</button>
+        </div>
+        <div id="motext" class="carousel-caption" style="color: black;">
+          <h1>Galaxy Z Flip</h1>
+          <h3>스마트폰의 새로운 가능성을 펼치다</h3>
+          <button type="button" class="btn btn-dark">구매 혜택 보기</button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <video id="vid02_pc"
+          src="https://images.samsung.com/is/content/samsung/p5/sec/home/2020/p6/kv/0403/home_kv_02_pc_1920x810.mp4"
+          width="100%" loop autoplay muted>
+        </video>
+        <video id="vid02_mo"
+          src="https://images.samsung.com/is/content/samsung/p5/sec/home/2020/p6/kv/0403/home_kv_02_mo_720x1480.mp4"
+          loop autoplay muted>
+        </video>
+        <div id="pctext" class="carousel-caption">
+          <h1>2020 QLED 8K</h1>
+          <h3>삼성닷컴만의 압도적인 혜택을 공개합니다</h3>
+          <button type="button" class="btn btn-light">구매 혜택 보기</button>
+        </div>
+        <div id="motext" class="carousel-caption">
+          <h1>2020 QLED 8K</h1>
+          <h3>삼성닷컴만의 압도적인 혜택을 공개합니다</h3>
+          <button type="button" class="btn btn-light">구매 혜택 보기</button>
+        </div>
+      </div>
+    </div>
+    <!-- The slideshow --->
+
+    <!-- Left and right controls ------------------------------------------->
+    <a class="carousel-control-next" href="#slider01" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+    <!-- Left and right controls -->
+  </div>
+  <!-- carousel -->
+
+  <!-- Main Menu ---------------------------------------------------->
+  <div class="container-fluid">
+    <div class="container">
+      <!-- 제품소개 ------------------------------------------->
+      <div id="item" class="container" style="margin-bottom: 20px; padding-top: 100px;">
+        <!-- 카테고리 ----------------------------------->
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">으뜸효율가전</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">새로운 갤럭시</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">우리집 맑음샵</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">특별한 혜택</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">추천 제품</a>
+          </li>
         </ul>
-      
-        <!-- The slideshow -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="//images.samsung.com/is/image/samsung/p5/sec/home/2020/p6/kv/20200423/200424_galaxy-zflip_MainKV_MO_bg.jpg?$ORIGIN_JPG$" width="100%" alt="Los Angeles">
-            <div class="carousel-item">
-                <img src="la.jpg" alt="Los Angeles">
-                <div class="carousel-caption">
-                  <h3>Los Angeles</h3>
-                  <p>We had such a great time in LA!</p>
+        <!-- 카테고리 -->
+        <!-- 첫째줄 ----------------------------------------->
+        <div class="row" style="padding: 10px 10px;">
+          <div class="col-6 col-md-3">
+            <div class="card" style="width:100%; height: 100%;">
+              <img class="card-img-top" src="img/goods1-1.webp" alt="Card image">
+              <div class="card-body">
+                <h6 class="card-title">김치플러스 뚜껑형 202 L</h6>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#goods1">more</a>
+                <!-- goods1 The Modal창 ------------------------------------->
+                <div class="modal" id="goods1">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">김치플러스 뚜껑형 202 L</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times; </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body text-center">
+                        <h4>한겨울 땅속 같은 아삭한 김치맛 메탈쿨링</h4>
+                        냉기 보존에 탁월한 메탈쿨링으로 초정온 기술(±0.3 ℃ 온도 편차)을 적용하여
+                        한겨울 땅 속 같은 아삭한 김치 맛을 오래오래 지켜드립니다.
+                        <img src="img/goods1-2.webp" alt="" width="100%">
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <!-- goods1 The Modal창 -->
               </div>
+            </div>
           </div>
-          <div class="carousel-item">
-            <img src="//images.samsung.com/is/image/samsung/p5/sec/home/2020/p6/kv/0424/0424_BESPOKE_MO_720_1480_v2.jpg?$ORIGIN_JPG$" width="100%" alt="Chicago">
+          <div class="col-6 col-md-3">
+            <div class="card" style="width:100%">
+              <img class="card-img-top" src="img/goods2-1.webp" alt="Card image">
+              <div class="card-body">
+                <h6 class="card-title">냉장고 615 L Refined Inox</h6>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#goods2">more</a>
+                <!-- goods2 The Modal창 ------------------------------------->
+                <div class="modal" id="goods2">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">냉장고 615 L Refined Inox</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times; </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body text-center">
+                        <h4>냉기를 따로따로 더 신선하게 독립냉각</h4>
+                        냉장실과 냉동실에 냉각팬이 따로 있어 냉장실은 촉촉하게
+                        냉동실은 오래 보관할 수 있도록 온도를 유지시켜 줍니다.
+                        더불어 냄새 섞임 걱정까지 없애줍니다.
+                        <img src="img/goods2-2.jfif" alt="" width="100%">
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- goods2 The Modal창 -->
+              </div>
+            </div>
           </div>
-          <div class="carousel-item">
-            <img src="//images.samsung.com/is/image/samsung/p5/sec/home/2020/p6/kv/0402/home_kv_01_mo_720x1480.jpg?$ORIGIN_JPG$" width="100%" alt="New York">
+          <div class="col-6 col-md-3">
+            <div class="card" style="width:100%">
+              <img class="card-img-top" src="img/goods3-1.webp" alt="Card image">
+              <div class="card-body">
+                <h6 class="card-title">BESPOKE 냉장고 4도어</h6>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#goods3">more</a>
+                <!-- goods3 The Modal창 ------------------------------------->
+                <div class="modal" id="goods3">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">BESPOKE 냉장고 4도어</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times; </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body text-center">
+                        <h4>나만의 맞춤형 디자인으로
+                          주방을 남다르게, 트렌디 디자인</h4>
+                        플랫한 디자인으로 모던하고 트렌디한 주방을 완성할 수 있습니다.
+                        필요할 때 도어 컬러만 교체하여 새 냉장고를 산 것 같은 인테리어 효과를 누릴 수 있습니다.
+                        <img src="img/goods3-2.webp" alt="" width="100%">
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- goods3 The Modal창 -->
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card" style="width:100%">
+              <img class="card-img-top" src="img/goods4-1.webp" alt="Card image">
+              <div class="card-body">
+                <h6 class="card-title">무풍에어컨 무풍갤러리 청정</h6>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#goods4">more</a>
+                <!-- goods4 The Modal창 ------------------------------------->
+                <div class="modal" id="goods4">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">무풍에어컨 무풍갤러리 청정</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times; </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body text-center">
+                        <h4>직바람 없이 하루 종일 시원한
+                          와이드 무풍냉방</h4>
+                        에어컨의 찬바람을 직접 쐬다 보면 냉방병 때문에 걱정되시죠?
+                        무풍에어컨은 마이크로홀에서 냉기를 뿜어주는 무풍 기술이 적용되어 있어 차가운 바람 없이도 기분 좋은 시원함을 유지해드립니다.
+                        <img src="img/goods4-2.webp" alt="" width="100%">
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- goods4 The Modal창 -->
+              </div>
+            </div>
           </div>
         </div>
-      
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <!-- 첫째줄 -->
+        <!-- 둘째줄 ---------------------------------------------->
+        <div class="row">
+          <div class="col-6 col-md-3">
+            <div class="card" style="width:100%">
+              <img class="card-img-top" src="img/goods5-1.webp" alt="Card image">
+              <div class="card-body">
+                <h6 class="card-title">그랑데 세탁기 AI 23kg 그레이지</h6>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#goods5">more</a>
+                <!-- goods5 The Modal창 ------------------------------------->
+                <div class="modal" id="goods5">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">그랑데 세탁기 AI 23kg 그레이지</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times; </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body text-center">
+                        <h4>오염도에 따라 세제와 헹굼을
+                          알아서 AI 맞춤세탁</h4>
+                        매번 세탁할 때마다 얼마만큼의 세제와 유연제를
+                        넣어야 할지 고민하셨나요? AI 맞춤 세탁 코스는 옷감 무게를
+                        감지하여 정량의 세제와 유연제를 자동으로 넣어주고 세탁 중
+                        오염도를 감지하여 세탁과 헹굼 시간을 조절해줍니다.
+                        <img src="img/goods5-2.webp" alt="" width="100%">
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- goods5 The Modal창 -->
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card" style="width:100%">
+              <img class="card-img-top" src="img/goods6-1.webp" alt="Card image">
+              <div class="card-body">
+                <h6 class="card-title">그랑데 세탁기 AI 23 kg 블랙 케비어</h6>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#goods6">more</a>
+                <!-- goods6 The Modal창 ------------------------------------->
+                <div class="modal" id="goods6">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">그랑데 세탁기 AI 23 kg 블랙 케비어</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times; </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body text-center">
+                        <h4>오염도에 따라 세제와 헹굼을
+                          알아서 AI 맞춤세탁</h4>
+                        매번 세탁할 때마다 얼마만큼의 세제와 유연제를
+                        넣어야 할지 고민하셨나요? AI 맞춤 세탁 코스는 옷감 무게를
+                        감지하여 정량의 세제와 유연제를 자동으로 넣어주고 세탁 중
+                        오염도를 감지하여 세탁과 헹굼 시간을 조절해줍니다.
+                        <img src="img/goods6-2.webp" alt="" width="100%">
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- goods6 The Modal창 -->
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card" style="width:100%">
+              <img class="card-img-top" src="img/goods7-1.webp" alt="Card image">
+              <div class="card-body">
+                <h6 class="card-title">Crystal UHD 163 cm 벽걸이형</h6>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#goods7">more</a>
+                <!-- goods7 The Modal창 ------------------------------------->
+                <div class="modal" id="goods7">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Crystal UHD 163 cm 벽걸이형</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times; </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body text-center">
+                        <h4>생생한 화질
+                          크리스탈 디스플레이 4K</h4>
+                        4K UHD TV의 화면은 FHD보다 4배 많은 픽셀로 구성되어 있습니다. 그만큼 화면이 선명하단 뜻이죠.
+                        마치 눈앞에서 보는 것처럼 현실감이 느껴지는 화질로 완전히 몰입해보세요..
+                        <img src="img/goods7-2.webp" alt="" width="100%">
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- goods7 The Modal창 -->
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card" style="width:100%">
+              <img class="card-img-top" src="img/goods8-1.webp" alt="Card image">
+              <div class="card-body">
+                <h6 class="card-title">Full HD TV 108 cm 스탠드형</h6>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#goods8">more</a>
+                <!-- goods8 The Modal창 ------------------------------------->
+                <div class="modal" id="goods8">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Full HD TV 108 cm 스탠드형</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times; </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body text-center">
+                        <h4>풍부한 색감의 와이드 컬러 컨트롤</h4>
+                        와이드 컬러 컨트롤이 여섯 개의 컬러를 중심으로 디테일하게 색감을 표현하며,
+                        실제에 가까운 자연색을 구현합니다.
+                        <img src="img/goods8-2.jfif" alt="" width="100%">
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- goods8 The Modal창 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 둘째줄 -->
+      </div>
+      <!-- 제품소개 -->
+      <!-- 모바일&IT 캐러셀 --------------------------------------------------------->
+      <div id="slider02" class="carousel slide" data-ride="carousel" style="margin-bottom: 20px; padding-top: 100px;">
+        <!-- Indicators ------------------------------------>
+        <ul class="carousel-indicators">
+          <li data-target="#slider02" data-slide-to="0" class="active">갤럭시북</li>
+          <li data-target="#slider02" data-slide-to="1">갤럭시버즈+</li>
+          <li data-target="#slider02" data-slide-to="2">살롱데포토그라프</li>
+          <li data-target="#slider02" data-slide-to="3">갤럭시스튜디오</li>
+        </ul>
+        <!-- Indicators -->
+
+        <!-- The slideshow ---------------------------------------------->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img id="img01_pc" src="img/pic1pc.webp" width="100%" alt="Los Angeles">
+            <img id="img01_mo" src="img/pic1mo.jpg" width="100%" height="700px" alt="Los Angeles">
+            <div class="carousel-caption" style="color: black;">
+              <h3>갤럭시 북 Flex &alpha;</h3>
+              <h3>사전판매 알림신청</h3>
+              <p>삼성닷컴에서 가장 먼저 만나보세요!</p>
+              <button type="button" class="btn btn-dark">알림 신청하기</button>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img id="img01_pc" src="img/pic2pc.png" width="100%" alt="Los Angeles">
+            <img id="img01_mo" src="img/pic2mo.png" width="100%" height="700px" alt="Los Angeles">
+            <div class="carousel-caption" style="color: black;">
+              <h3>나만의 힙한 감성을</h3>
+              <h3>채워주는</h3>
+              <h3>Galaxy Buds&plus;</h3>
+              <button type="button" class="btn btn-dark">구매 혜택 보기</button>
+
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img id="img01_pc" src="img/pic3pc.jpg" width="100%" alt="Los Angeles">
+            <img id="img01_mo" src="img/pic3mo.jpg" width="100%" height="700px" alt="Los Angeles">
+            <div class="carousel-caption">
+              <h3>S20만 있었더라면!</h3>
+              <h3>네 가지 에피소드 공개</h3>
+              <button type="button" class="btn btn-light">입장하기</button>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img id="img01_pc" src="img/pic4pc.jpg" width="100%" alt="Los Angeles">
+            <img id="img01_mo" src="img/pic4mo.jpg" width="100%" height="700px" alt="Los Angeles">
+            <div class="carousel-caption">
+              <h3>갤럭시 스튜디오</h3>
+              <p>Galaxy S20의 놀랍고 새로운 기능들을 마음껏 배워보세요</p>
+              <button type="button" class="btn btn-light">입장하기</button>
+            </div>
+          </div>
+        </div>
+        <!-- The slideshow --->
+
+        <!-- Left and right controls ------------------------------------------->
+        <a class="carousel-control-prev" href="#slider02" data-slide="prev">
           <span class="carousel-control-prev-icon"></span>
         </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
+        <a class="carousel-control-next" href="#slider02" data-slide="next">
           <span class="carousel-control-next-icon"></span>
         </a>
-      
+        <!-- Left and right controls -->
       </div>
+      <!-- 모바일&IT 캐러셀 -->
+
+      <!-- contents ------------------------------------------->
+      <div id="contents" class="container" style="margin-bottom: 20px; padding-top: 100px;">
+        <div class="row">
+          <div id="story" class="col-lg-3">
+            <h2>스토리</h2>
+            <p>당신의 삶을 특별하게 해줄 새로운 아이디어 <br>
+              스마트하게 사는 새로운 방법을 알아보세요.</p>
+            <button type="button" class="btn btn-dark">더 알아보기</button>
+          </div>
+          <div class="col-9 col-lg-6 ">
+            <img src="img/pic5.png" alt="" width="100%">
+          </div>
+          <div id="plus" class="col-3 col-lg-3">
+            <div style="border-top: 1px solid black;">
+              01 BTS가 촬영장에서 휴식을 즐기는 방법
+              더 알아보기
+            </div>
+            <div style="border-top: 1px solid black;">
+              02 삼성 X 톰브라운, 단 하나뿐인 룩을 완성한다
+              더 알아보기
+            </div>
+            <div style="border-top: 1px solid black;">
+              03 초고화질 시대를 향한 거대한 도약
+              더 알아보기
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- contents -->
+    </div>
+  </div>
+  <!-- Main Menu -->
+
+  <!-- 위로 올라가기 ------------------------------>
+  <div class="containerfluid text-center">
+    <a id="up" href="#slider01" title="To Top">
+      <i class="fas fa-chevron-up logo-footer">위로</i>
+    </a>
+  </div>
+  <!-- 위로 올라가기 -->
+
+  <!-- sub menu ------------------------------------------->
+  <div id="subMenu" class="container-fluid" style="margin-bottom: 20px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h4>제품</h4>
+          <div class="row">
+            <div class="col-sm-6">
+              <ul>
+                <li>스마트폰</li>
+                <li>태블릿</li>
+                <li>웨어러블</li>
+                <li>모바일 액세서리</li>
+                <li>TV</li>
+                <li>Lifestyle TV</li>
+                <li>BESPOKE</li>
+                <li>삼성 오디오</li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul>
+                <li>냉장고</li>
+                <li>에어컨</li>
+                <li>세탁기</li>
+                <li>건조기</li>
+                <li>에어드레서</li>
+                <li>청소기</li>
+                <li>노트북</li>
+                <li>데스크탑</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <h4>고객 문의</h4>
+          <ul>
+            <li>FAQ</li>
+            <li>이메일 상담</li>
+            <li>매장 찾기</li>
+            <li>서비스센터 찾기</li>
+            <li>디지털프라자 아카데미</li>
+            <li>비즈니스 협력제안</li>
+            <li>MD 비즈니스 협력제안</li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <h4>부가정보</h4>
+          <ul>
+            <li>삼성 디지털프라자</li>
+            <li>데이코</li>
+            <li>뉴스룸</li>
+            <li>디자인 삼성</li>
+            <li>삼성전자 사회공헌</li>
+            <li>구매안전서비스</li>
+            <li>폐카트리지 회수신청</li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <h4>기업정보</h4>
+          <ul>
+            <li>회사소개</li>
+            <li>투자자 정보</li>
+            <li>공지사항</li>
+            <li>제품 접근성</li>
+            <li>삼성멤버스 커뮤니티</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sub menu -->
+  <!-- footer ------------------------------------------>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10" style="font-size: 7px;">
+          Copyright © 1995-2020 SAMSUNG All Rights Reserved. <br>
+          경기도 수원시 영통구 삼성로 129 (매탄동) 삼성전자주식회사 대표이사 김기남 사업자등록번호 124-81-00998 사업자 정보확인 통신판매업 신고: 2000-경기수원-0515 호스팅서비스사업자 :
+          삼성에스디에스(주) <br>
+          대표번호: 02-2255-0114 팩스: 02-2255-0117 제품/서비스/멤버십: 1588-3366 구매문의: 1588-6084 <br>
+          삼성전자주식회사는 통신판매중개자로서 통신판매의 당사자가 아니며, 개별 판매자가 등록한 거래정보 및 거래에 대하여 책임을 지지 않습니다. 본 사이트의 콘텐츠는 저작권법의 보호를 받는바, 무단 전재,
+          복사, 배포 등을 금합니다.
+        </div>
+        <div class="col-sm-2">
+          <img src="img/footer1.png" alt="">
+          <img src="img/footer2.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <!-- 네비게이션 --------------------------------->
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top"
+    style="position:fixed;top:0;width: 100%; margin-bottom: 50px !important;">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#slider01" style="font-size: 40px;"><img src="img/logo.png" alt=""></a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#item" data-toggle="collapse" data-target=".navbar-collapse.in">제품소개</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#slider02">모바일&IT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contents">스토리</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- 네비게이션 -->
 </body>
+
 </html>
