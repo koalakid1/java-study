@@ -1,4 +1,0 @@
-DB Connection
-:DB연결 작업은 서버에 로드가 걸리는 작업중 하나임.
-
-자주 Connection과 Close를 반복하는 것은 성능에 좋지 않음.

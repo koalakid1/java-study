@@ -1,3 +1,0 @@
-display 속성은 transition에 사용 불가
-
-엘리먼트를 사라지게 애니메이션 하려면 opacity사용
